@@ -11,7 +11,6 @@ public class btnRestarVida : MonoBehaviour
         if (gameManagerScript != null )
         {
             gameManagerScript.QuitarVida();
-
         }
     }
 }
