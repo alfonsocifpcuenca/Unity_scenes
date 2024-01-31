@@ -1,0 +1,12 @@
+{
+	"textsList": [
+		{
+			"key": "label.scene_01",
+			"value": "Mi primera pantalla"
+		},
+		{
+			"key": "label.scene_02",
+			"value": "Mi segunda pantalla"
+		}
+	]
+}
