@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -61,31 +59,25 @@ public class GameManagerSingleton : MonoBehaviour
      * */
     public int Vidas = 3;
 
-    private Texts myTexts;
+
+    /*
+     * Método para devolver el valor en función de la clave enviada
+     * obteniendo los datos de es.json
+     * */
+
+    private TextResources texts;
     public TextItem GetText(string key)
     {
-        if (this.myTexts == null)
+        // Si no tenemos los textos en memoria los cargamos del JSON
+        if (this.texts == null)
         {
-            // Vamos a buscar en un diccionario la clave y si existe, devolvemos su valor
-            var json = Resources.Load("es");
-            this.myTexts = JsonUtility.FromJson<Texts>(json.ToString());
+            // Leemos el JSON del directorio /Resources
+            TextAsset json = Resources.Load<TextAsset>("es");
+            // Parseamos el JSON con la clase Texts
+            this.texts = JsonUtility.FromJson<TextResources>(json.ToString());
         }
 
-        TextItem myText = myTexts.textsList.Where(x => x.key == key).FirstOrDefault();
-        return myText;
+        TextItem item = texts.Items.Where(x => x.Key == key).FirstOrDefault();
+        return item;
     }
-}
-
-[Serializable]
-public class Texts
-{
-    public List<TextItem> textsList;
-}
-
-[Serializable]
-public class TextItem
-{
-    public string key;
-    public string value;
-    public string color;
 }

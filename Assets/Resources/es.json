@@ -1,12 +1,16 @@
 {
-	"textsList": [
+	"Items": [
 		{
-			"key": "label.scene_01",
-			"value": "Mi primera pantalla"
+			"Key": "label.scene_01",
+			"Value": "Mi primera pantalla"
 		},
 		{
-			"key": "label.scene_02",
-			"value": "Mi segunda pantalla"
+			"Key": "label.scene_02",
+			"Value": "Mi segunda pantalla"
+		},
+		{
+			"Key": "label.scene_03",
+			"Value": "Mi tercera pantalla"
 		}
 	]
 }
